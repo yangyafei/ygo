@@ -5,6 +5,8 @@ import (
 	"math"
 )
 
+var pak_name = "常量const"
+
 const PI = 3.14
 const age = 30 / 2
 const sex = 139479388230.249887449801287324128782342348732783248 //用反斜杠连接多行表达式
@@ -24,8 +26,8 @@ const(
 	iota_e //没赋值的常量等于上一个的值
 )
 
-func Init_const() {
-	fmt.Println("常量const------------------------------------------------------------------------")
+func Doit_const() {
+	fmt.Println(pak_name,"------------------------------------------------------------------------")
 
 	fmt.Println("PI = ", PI)
 	fmt.Println("age = ", age)

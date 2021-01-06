@@ -4,6 +4,8 @@ import "fmt"
 import "demo/pkg"
 
 func main() {
-	fmt.Println("hello world")
-	pkg.Init_const()
+	fmt.Println("sum demo")
+	// pkg.Doit_const()
+	// pkg.Doit_variable()
+	pkg.Doit_strconv()
 }
