@@ -1,12 +1,10 @@
-package pkg
+package demo
 
 import "fmt"
 
-
-
 func Doit_variable() {
 	var pak_name = "常量variable"
-	fmt.Println(pak_name+"------------------------------------------------------------------------")
+	fmt.Println(pak_name + "------------------------------------------------------------------------")
 	var inta int
 	var floata float32
 	var stringa string
@@ -21,5 +19,3 @@ func Doit_variable() {
 	fmt.Println("------------------------------------------------------------------------")
 
 }
-
-

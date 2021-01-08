@@ -1,4 +1,4 @@
-package pkg
+package demo
 
 import (
 	"fmt"
@@ -10,15 +10,15 @@ var pak_name = "常量const"
 const PI = 3.14
 const age = 30 / 2
 const sex = 139479388230.249887449801287324128782342348732783248 //用反斜杠连接多行表达式
-const log2E = 1 / math.Ln2 //表达式
+const log2E = 1 / math.Ln2                                       //表达式
 const hardEight = (1 << 100) >> 97
 
-const Monday,Tuesday = 1,2
+const Monday, Tuesday = 1, 2
 const (
 	Monday1, Tuesday1 = 3, 4
 )
 
-const(
+const (
 	iota_a = iota
 	iota_b
 	iota_c
@@ -27,7 +27,7 @@ const(
 )
 
 func Doit_const() {
-	fmt.Println(pak_name,"------------------------------------------------------------------------")
+	fmt.Println(pak_name, "------------------------------------------------------------------------")
 
 	fmt.Println("PI = ", PI)
 	fmt.Println("age = ", age)

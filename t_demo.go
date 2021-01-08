@@ -3,7 +3,7 @@ package main
 import (
 	"time"
 )
-import . "demo/pkg"
+import "demo"
 
 func main() {
 	// go Doit_const()
@@ -12,7 +12,7 @@ func main() {
 	// go Doit_regexp()
 	// go Doit_runtime()
 
-	go Channel()
+	go demo.Channel()
 	// go ChannelCheckClose()
 	// go ChannelApplicationCrond()
 	// go ChannelApplicationDecouple()

@@ -1,11 +1,11 @@
-package pkg
+package demo
 
 import (
 	"fmt"
 	"regexp"
 )
 
-func Doit_regexp()  {
+func Doit_regexp() {
 	text := `Hello 世界！123 Go.`
 	fmt.Println("text: ", text)
 
@@ -24,19 +24,19 @@ func Doit_regexp()  {
 
 	fmt.Print("查找连续的非单词字母、非空白字符")
 	reg = regexp.MustCompile(`[^\w\s]+`)
-	fmt.Printf(": %q\n", reg.FindAllString(text,  -1))
+	fmt.Printf(": %q\n", reg.FindAllString(text, -1))
 
 	fmt.Print("查找连续的大写字母 ")
 	reg = regexp.MustCompile(`[[:upper:]]+`)
-	fmt.Printf(": %q\n", reg.FindAllString(text,-1))
+	fmt.Printf(": %q\n", reg.FindAllString(text, -1))
 
 	fmt.Print("查找连续的非ASCII字符")
 	reg = regexp.MustCompile(`[[:^ascii:]]+`)
-	fmt.Printf(": %q\n", reg.FindAllString(text,-1))
+	fmt.Printf(": %q\n", reg.FindAllString(text, -1))
 
 	fmt.Print("查找连续的标点符号 ")
 	reg = regexp.MustCompile(`[\pP]+`)
-	fmt.Printf(": %q\n",reg.FindAllString(text,-1))
+	fmt.Printf(": %q\n", reg.FindAllString(text, -1))
 
 	fmt.Print("查找连续的非标点符号")
 	reg = regexp.MustCompile(`[\PP]+`)
@@ -44,56 +44,56 @@ func Doit_regexp()  {
 
 	fmt.Print("查找连续的汉字")
 	reg = regexp.MustCompile(`[\p{Han}]+`)
-	fmt.Printf(": %q\n", reg.FindAllString(text,-1))
+	fmt.Printf(": %q\n", reg.FindAllString(text, -1))
 
 	fmt.Print("查找连续的非汉字")
 	reg = regexp.MustCompile(`[\P{Han}]+`)
-	fmt.Printf(": %q\n", reg.FindAllString(text,-1))
+	fmt.Printf(": %q\n", reg.FindAllString(text, -1))
 
 	fmt.Print("查找Hello Go")
 	reg = regexp.MustCompile(`Hello|Go`)
-	fmt.Printf(": %q\n", reg.FindAllString(text,-1))
+	fmt.Printf(": %q\n", reg.FindAllString(text, -1))
 
 	fmt.Print("查找以H开头、空格结尾")
 	reg = regexp.MustCompile(`^H.*\s`)
-	fmt.Printf(": %q\n", reg.FindAllString(text,-1))
+	fmt.Printf(": %q\n", reg.FindAllString(text, -1))
 
 	fmt.Print("查找行首是H、空格结尾 非贪婪模式")
 	reg = regexp.MustCompile(`(?U)^H.*\s`)
-	fmt.Printf(": %q\n", reg.FindAllString(text,-1))
+	fmt.Printf(": %q\n", reg.FindAllString(text, -1))
 
 	fmt.Print("查找以Hello开头(忽略大小写)，以Go结尾")
 	reg = regexp.MustCompile(`(?i:^Hello).*Go`)
-	fmt.Printf(": %q\n", reg.FindAllString(text,-1))
+	fmt.Printf(": %q\n", reg.FindAllString(text, -1))
 
 	fmt.Print("查找Go.")
 	reg = regexp.MustCompile(`\QGo.\E`)
-	fmt.Printf(": %q\n", reg.FindAllString(text,-1))
+	fmt.Printf(": %q\n", reg.FindAllString(text, -1))
 
 	fmt.Print("查找行首从空格开始，到行尾，不包含空格的字符串")
 	reg = regexp.MustCompile(` [^ ]*$`)
-	fmt.Printf(": %q\n", reg.FindAllString(text,-1))
+	fmt.Printf(": %q\n", reg.FindAllString(text, -1))
 
 	fmt.Print("查找单词边界之间的字符串")
 	reg = regexp.MustCompile(`(?U)\b.+\b`)
-	fmt.Printf(": %q\n", reg.FindAllString(text,-1))
+	fmt.Printf(": %q\n", reg.FindAllString(text, -1))
 
 	fmt.Print("查找1到4次的非空格字符，且以o结尾")
 	reg = regexp.MustCompile(`[^ ]{1,4}o`)
-	fmt.Printf(": %q\n", reg.FindAllString(text,-1))
+	fmt.Printf(": %q\n", reg.FindAllString(text, -1))
 
 	fmt.Print("查找Hello或Go")
 	reg = regexp.MustCompile(`(?:Hell|G)o`)
 	// reg = regexp.MustCompile(`(Hell|G)o`) 也可以
-	fmt.Printf(": %q\n", reg.FindAllString(text,-1))
+	fmt.Printf(": %q\n", reg.FindAllString(text, -1))
 
 	fmt.Print("查找Hello或Go，替换为Hellooo Gooo")
 	reg = regexp.MustCompile(`(Hell|G)o`)
-	fmt.Printf(": %q\n", reg.ReplaceAllString(text,"${1}ooo"))
+	fmt.Printf(": %q\n", reg.ReplaceAllString(text, "${1}ooo"))
 
 	fmt.Print("交换hello Go")
 	reg = regexp.MustCompile(`(Hello)(.*)(Go)`)
-	fmt.Printf(": %q\n",reg.ReplaceAllString(text,"$3$2$1"))
+	fmt.Printf(": %q\n", reg.ReplaceAllString(text, "$3$2$1"))
 
 	fmt.Print("查找特殊字符")
 	reg = regexp.MustCompile(`[\f\t\n\r\v\123\x7F\x{10FFFF}\\\^\$\.\*\+\?\{\}\(\)\[\]\|]`)
@@ -413,4 +413,4 @@ Golang中的正则表达式
 　　上面介绍的正则表达式语法是“Perl 语法”，除了“Perl 语法”外，Go 语言中还有另一种“POSIX 语法”，“POSIX 语法”除了不能使用“Perl 类”之外，其它都一样。
 
 ------------------------------------------------------------
- */
+*/
